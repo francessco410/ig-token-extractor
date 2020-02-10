@@ -72,6 +72,15 @@ const _getLongLivedToken = async (code, clientId, clientSecret, redirectUri) => 
         message: `Visit:\n\n> ${codeUrl}\n\nand obtain an Instagram code from query param`,
     });
 
-    const token = await _getLongLivedToken(codeUserInput.code, userInput.clientId, userInput.clientSecret, userInput.redirectUri);
-    console.log(`Your instagram long-lived token is:\n${token}`);
+    let token = null;
+
+    try {
+        token = await _getLongLivedToken(codeUserInput.code, userInput.clientId, userInput.clientSecret, userInput.redirectUri);
+    } catch (e) {
+        console.log(`An error occurred during communication with Instagram's API. Please check if all inputs are correct and try again.`);
+        return process.exit(1);
+    }
+
+    console.log(`Your instagram long-lived token is:\n\n${token}`);
+    return process.exit(0);
 })();
