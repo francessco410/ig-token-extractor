@@ -1,0 +1,23 @@
+{
+  "name": "ig-token-extractor",
+  "version": "1.0.0",
+  "description": "Simple package to extract Instagram's Basic Display API's Long-Lived Access Token",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "instagram",
+    "token",
+    "extractor",
+    "Basic Display API"
+  ],
+  "author": "Marcin Włodarczyk",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "fs": "0.0.1-security",
+    "prompts": "^2.3.0",
+    "querystring": "^0.2.0"
+  }
+}
