@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const axios = require('axios');
 const querystring = require('querystring');
 const prompts = require('prompts');
@@ -67,7 +69,7 @@ const _getLongLivedToken = async (code, clientId, clientSecret, redirectUri) => 
     const codeUserInput = await prompts({
         type: 'text',
         name: 'code',
-        message: `Visit: ${codeUrl} and obtain an Instagram code`,
+        message: `Visit:\n\n> ${codeUrl}\n\nand obtain an Instagram code from query param`,
     });
 
     const token = await _getLongLivedToken(codeUserInput.code, userInput.clientId, userInput.clientSecret, userInput.redirectUri);
